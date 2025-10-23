@@ -15,23 +15,21 @@ PANEL_DIR="/var/www/pterodactyl"
 # Ensure target directories exist
 sudo mkdir -p "$PANEL_DIR/public"
 sudo mkdir -p "$PANEL_DIR/public/themes"
-sudo mkdir -p "$PANEL_DIR/resources/views/blueprint"
-sudo mkdir -p "$PANEL_DIR/resources/views/blueprint/admin"
 sudo mkdir -p "$PANEL_DIR/resources/views/blueprint/dashboard"
-sudo mkdir -p "$PANEL_DIR/resources/views/blueprint/extensions"
+
 
 
 # Copy custom CSS
 cp resources/css/atlas-blueprint.css "$PANEL_DIR/public/themes/atlas-blueprint.css"
 
-# Overwrite Blade templates in blueprint
+# Overwrite Blade templates in blueprint dashboard
 cp resources/views/auth/login.blade.php "$PANEL_DIR/resources/views/blueprint/dashboard/login.blade.php"
 cp resources/views/layouts/sidebar.blade.php "$PANEL_DIR/resources/views/blueprint/dashboard/sidebar.blade.php"
 cp resources/views/layouts/navbar.blade.php "$PANEL_DIR/resources/views/blueprint/dashboard/navbar.blade.php"
 
-# Add stylesheet reference to main Blueprint layout (if not present)
-if ! grep -q "atlas-blueprint.css" "$PANEL_DIR/resources/views/blueprint/dashboard/app.blade.php"; then
-  sed -i '/<head>/a <link rel="stylesheet" href="{{ asset('themes/atlas-blueprint.css') }}">' "$PANEL_DIR/resources/views/blueprint/dashboard/app.blade.php"
+# Add stylesheet reference to dashboard.blade.php if not present
+if ! grep -q "atlas-blueprint.css" "$PANEL_DIR/resources/views/blueprint/dashboard/dashboard.blade.php"; then
+  sed -i '/<head>/a <link rel="stylesheet" href="{{ asset('themes/atlas-blueprint.css') }}">' "$PANEL_DIR/resources/views/blueprint/dashboard/dashboard.blade.php"
 fi
 
 echo "Clearing cache and restarting panel..."
