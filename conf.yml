@@ -1,0 +1,9 @@
+name: Atlas Hosting Theme
+description: Custom dark theme for Atlas Hosting
+version: 1.0.0
+author: Atlas Hosting
+url: https://github.com/your-username/atlas-hosting-theme
+
+hooks:
+  - name: panel.scripts
+    file: resources/scripts/theme-hook.php
