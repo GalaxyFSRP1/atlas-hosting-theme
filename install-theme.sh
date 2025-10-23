@@ -12,10 +12,6 @@ echo "Installing Atlas Hosting Blueprint Theme..."
 # Absolute path to Pterodactyl panel directory
 PANEL_DIR="/var/www/pterodactyl"
 
-# Copy logo and favicon
-cp public/logo.png "$PANEL_DIR/public/logo.png"
-cp public/favicon.ico "$PANEL_DIR/public/favicon.ico"
-
 # Copy custom CSS
 cp resources/css/atlas-blueprint.css "$PANEL_DIR/public/themes/atlas-blueprint.css"
 
