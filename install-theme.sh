@@ -20,9 +20,6 @@ sudo mkdir -p "$PANEL_DIR/resources/views/blueprint/admin"
 sudo mkdir -p "$PANEL_DIR/resources/views/blueprint/dashboard"
 sudo mkdir -p "$PANEL_DIR/resources/views/blueprint/extensions"
 
-# Copy logo and favicon
-cp public/logo.png "$PANEL_DIR/public/logo.png"
-cp public/favicon.ico "$PANEL_DIR/public/favicon.ico"
 
 # Copy custom CSS
 cp resources/css/atlas-blueprint.css "$PANEL_DIR/public/themes/atlas-blueprint.css"
