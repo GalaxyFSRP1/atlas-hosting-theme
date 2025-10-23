@@ -4,9 +4,12 @@
 
 set -e
 
+echo "Pulling latest theme files from repo..."
+git pull
+
 echo "Installing Atlas Hosting Blueprint Theme..."
 
-# Absolute path to Pterodactyl panel directory (edit if needed)
+# Absolute path to Pterodactyl panel directory
 PANEL_DIR="/var/www/pterodactyl"
 
 # Copy logo and favicon
